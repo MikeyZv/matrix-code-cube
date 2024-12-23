@@ -1,0 +1,122 @@
+@font-face {font-family: Matrix; src: url('matrix_code_nfi/matrix\ code\ nfi.ttf')}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+body {
+    background-color: black;
+    width: 100%;
+}
+
+:root {
+    --cube-width: 300px;
+    --translateZ: 150px;
+}
+
+.cube-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1000px;
+    perspective: 1000px;
+    perspective-origin: center;
+}
+
+.cube {
+    transform-style: preserve-3d;
+    height: var(--cube-width);
+    width: var(--cube-width);
+    animation: spin 5s linear infinite;
+}
+
+.cube-face {
+    height: var(--cube-width);
+    width: var(--cube-width);
+    position: absolute;
+    /* border: 1px solid black; */
+}
+
+#front {
+    transform: translate3d(0,0,var(--translateZ));
+    display: flex;
+}
+
+#back {
+    transform: rotate3d(0,1,0,180deg) translate3d(0,0,var(--translateZ));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left {
+    transform: rotate3d(0,1,0,-90deg) translate3d(0,0,var(--translateZ));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right {
+    transform: rotate3d(0,1,0,90deg) translate3d(0,0,var(--translateZ));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#top {
+    transform: rotate3d(1,0,0,90deg) translate3d(0,0,var(--translateZ));
+}
+
+#bottom {
+    transform: rotate3d(1,0,0,-90deg) translate3d(0,0,var(--translateZ));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {transform: rotate3d(1,1,1, 0deg);}
+    to {transform: rotate3d(1,1,1, 360deg);}
+}
+
+@media (max-width: 600px) {
+    :root {
+        --cube-width: 200px;
+        --translateZ: 100px;
+    }
+
+    #animation-box-front {
+        height: var(--cube-width);
+        width: var(--cube-width);
+    }
+
+    #animation-box-back {
+        height: var(--cube-width);
+        width: var(--cube-width);
+    }
+
+    #animation-box-left {
+        height: var(--cube-width);
+        width: var(--cube-width);
+    }
+    
+    #animation-box-right {
+        height: var(--cube-width);
+        width: var(--cube-width);
+    }
+
+    #animation-box-top {
+        height: var(--cube-width);
+        width: var(--cube-width);
+    }
+
+    #animation-box-bottom {
+        height: var(--cube-width);
+        width: var(--cube-width);
+    }
+}
