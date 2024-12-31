@@ -46,86 +46,12 @@ for (let i = 0; i < columns; i++) {
     trails[i] = 1;
 }
 
+canvas1.addEventListener("click", changeColor2);
+canvas2.addEventListener("click", changeColor2);
+canvas3.addEventListener("click", changeColor2);
+canvas4.addEventListener("click", changeColor3);
 canvas5.addEventListener("click", changeColor1);
-canvas6.addEventListener("click", changeColor2);
-
-// canvas1.addEventListener("mousemove", (event) => {
-//     const rect = canvas1.getBoundingClientRect();
-//     const x = event.clientX - rect.left;
-//     const y = event.clientY - rect.top;
-  
-//     // Check if the mouse is over the blue rectangle
-//     if (x >= 0 && x <= 300 && y >= 0 && y <= 300) {
-//         ctx1.fillStyle = "white";
-//         ctx1.font = "50px Matrix";
-//         ctx1.fillText("GITHUB", 100, 100);
-//     } 
-// });
-
-// canvas2.addEventListener("mousemove", (event) => {
-//     const rect = canvas2.getBoundingClientRect();
-//     const x = event.clientX - rect.left;
-//     const y = event.clientY - rect.top;
-  
-//     // Check if the mouse is over the blue rectangle
-//     if (x >= 0 && x <= 300 && y >= 0 && y <= 300) {
-//         ctx2.fillStyle = "white";
-//         ctx2.font = "50px Matrix";
-//         ctx2.fillText("LINKEDIN", 150, 250);
-//     } 
-// });
-
-// canvas3.addEventListener("mousemove", (event) => {
-//     const rect = canvas3.getBoundingClientRect();
-//     const x = event.clientX - rect.left;
-//     const y = event.clientY - rect.top;
-  
-//     // Check if the mouse is over the blue rectangle
-//     if (x >= 0 && x <= 300 && y >= 0 && y <= 300) {
-//         ctx3.fillStyle = "white";
-//         ctx3.font = "50px Matrix";
-//         ctx3.fillText("EMAIL", 200, 150);
-//     } 
-// });
-
-// canvas4.addEventListener("mousemove", (event) => {
-//     const rect = canvas4.getBoundingClientRect();
-//     const x = event.clientX - rect.left;
-//     const y = event.clientY - rect.top;
-  
-//     // Check if the mouse is over the blue rectangle
-//     if (x >= 0 && x <= 300 && y >= 0 && y <= 300) {
-//         ctx4.fillStyle = "white";
-//         ctx4.font = "50px Matrix";
-//         ctx4.fillText("2048", 100, 200);
-//     } 
-// });
-
-// canvas5.addEventListener("mousemove", (event) => {
-//     const rect = canvas5.getBoundingClientRect();
-//     const x = event.clientX - rect.left;
-//     const y = event.clientY - rect.top;
-  
-//     // Check if the mouse is over the blue rectangle
-//     if (x >= 0 && x <= 300 && y >= 0 && y <= 300) {
-//         ctx5.fillStyle = "white";
-//         ctx5.font = "50px monospace";
-//         ctx5.fillText("ERROR 404", 150, 50);
-//     } 
-// });
-
-// canvas6.addEventListener("mousemove", (event) => {
-//     const rect = canvas6.getBoundingClientRect();
-//     const x = event.clientX - rect.left;
-//     const y = event.clientY - rect.top;
-  
-//     // Check if the mouse is over the blue rectangle
-//     if (x >= 0 && x <= 300 && y >= 0 && y <= 300) {
-//         ctx6.fillStyle = "white";
-//         ctx6.font = "50px monospace";
-//         ctx6.fillText("loading...", 150, 250);
-//     } 
-// });
+canvas6.addEventListener("click", changeColor1);
 
 function changeColor1() {
     textColor = "#00FF41";
@@ -135,6 +61,9 @@ function changeColor2() {
     textColor = "red";
 }
 
+function changeColor3() {
+    textColor = "black";
+}
 
 function draw(canvas, ctx) {
     //makes trail fade
